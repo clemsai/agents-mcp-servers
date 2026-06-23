@@ -1,61 +1,27 @@
 # Remote3 Profile — Clem Project
 
----
-
-## JOB TITLE / HEADLINE
-```
+## Title
 Web3 Developer & Smart Contract Engineer
-```
 
----
+## Bio
+Full-stack Web3 developer with expertise in Solidity smart contract development, DeFi protocols, and AI data operations. Experienced in building end-to-end dApps, writing secure smart contracts, and delivering high-accuracy data annotation for AI/ML projects. Fluent in 4 languages. Available worldwide.
 
-## BIO / SUMMARY
-
-```
-Full-stack Web3 developer with expertise in Solidity smart contract development, DeFi protocols, and AI data operations. Experienced in building end-to-end dApps, writing secure smart contracts, and delivering high-quality data annotation for AI/ML projects. Available worldwide.
-```
-
----
-
-## SKILLS
-
-```
-• Solidity
-• Ethereum
-• Smart Contracts
-• DeFi
-• Web3.js
-• Ethers.js
-• Hardhat
-• Foundry
-• React
-• Next.js
-• Python
-• Data Annotation
-• Blockchain Development
+## Skills
+- Solidity
+- Ethereum
+- Smart Contracts
+- DeFi
+- Web3.js / Ethers.js
+- React / Next.js
+- Python
+- Data Annotation
+- Blockchain Development
 - Full-Stack Development
-• Chainlink
-• NFTs
-• Security Auditing
-```
 
----
+## Availability
+- Remote: Yes
+- Timezone: Flexible (US-based)
+- Hours: Full-time
 
-## EXPERIENCE LEVEL
-```
-Senior / Expert
-```
-
----
-
-## AVAILABILITY
-```
-Full-time — Remote — Worldwide
-```
-
----
-
-## CONTACT
-```
-Email: clemproject@agentmail.to
-```
+## Contact
+- Email: clemproject@agentmail.to
