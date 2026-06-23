@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentMail MCP — Email Infrastructure for AI Agents</title>
+<meta name="description" content="Give your AI agents their own email inbox. Send, receive, and manage email autonomously via AgentMail MCP server. One-click install for Claude, Cursor, and any MCP-compatible agent.">
+
+<!-- AEO: Agent Identification & Recognition -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AgentMail MCP Server",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "MCP server that gives AI agents email capabilities via AgentMail API",
+  "url": "https://github.com/clemsai/email-mcp-server",
+  "installUrl": "https://github.com/clemsai/email-mcp-server",
+  "featureList": ["Send email", "List inboxes", "List messages", "Get message content", "Reply to messages"]
+}
+</script>
+
+<!-- Open Graph -->
+<meta property="og:title" content="AgentMail MCP — Email for AI Agents">
+<meta property="og:description" content="Give your AI agents their own email inbox. MCP server for Claude, Cursor, and any MCP-compatible agent.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clemsai.github.io/email-mcp-server">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--surface:#12121a;--border:#1e1e2e;--text:#e4e4e7;--muted:#71717a;--accent:#6366f1;--accent-glow:rgba(99,102,241,0.15);--green:#22c55e}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+header{padding:20px 0;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);z-index:100}
+header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:18px;font-weight:700;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:24px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;font-size:14px;transition:color 0.2s}
+nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;transition:all 0.2s;border:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#4f46e5;box-shadow:0 0 24px var(--accent-glow)}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent)}
+.hero{padding:120px 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:56px;font-weight:800;line-height:1.1;margin-bottom:24px;letter-spacing:-0.03em}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--accent) 0%,#a855f7 50%,#ec4899 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:20px;color:var(--muted);max-width:600px;margin:0 auto 40px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.code-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:14px;text-align:left;max-width:600px;margin:40px auto 0;position:relative;overflow:hidden}
+.code-block::before{content:'● ● ●';display:block;color:var(--muted);font-size:12px;margin-bottom:12px;letter-spacing:4px}
+.code-block .comment{color:var(--muted)}
+.code-block .key{color:var(--accent)}
+.code-block .str{color:var(--green)}
+.features{padding:80px 0}
+.features h2{text-align:center;font-size:36px;font-weight:700;margin-bottom:48px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color 0.2s}
+.feature-card:hover{border-color:var(--accent)}
+.feature-card .icon{font-size:32px;margin-bottom:16px}
+.feature-card h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.feature-card p{color:var(--muted);font-size:14px;line-height:1.7}
+.how-it-works{padding:80px 0;border-top:1px solid var(--border)}
+.how-it-works h2{text-align:center;font-size:36px;font-weight:700;margin-bottom:48px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px}
+.step{text-align:center}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--accent-glow);color:var(--accent);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.step h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14px}
+.pricing{padding:80px 0;border-top:1px solid var(--border)}
+.pricing h2{text-align:center;font-size:36px;font-weight:700;margin-bottom:48px}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto}
+.pricing-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;text-align:center}
+.pricing-card.featured{border-color:var(--accent);box-shadow:0 0 40px var(--accent-glow)}
+.pricing-card h3{font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
+.pricing-card .price{font-size:48px;font-weight:800;margin-bottom:8px}
+.pricing-card .price span{font-size:16px;color:var(--muted);font-weight:400}
+.pricing-card ul{list-style:none;margin:24px 0;padding:0}
+.pricing-card ul li{padding:8px 0;color:var(--muted);font-size:14px;border-bottom:1px solid var(--border)}
+.pricing-card ul li:last-child{border:none}
+.cta{padding:80px 0;text-align:center;border-top:1px solid var(--border)}
+.cta h2{font-size:36px;font-weight:700;margin-bottom:16px}
+.cta p{color:var(--muted);font-size:18px;margin-bottom:32px}
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--text);text-decoration:none}
+@media(max-width:768px){.hero h1{font-size:36px}.hero p{font-size:16px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<a href="#" class="logo">agent<span>mail</span>.mcp</a>
+<nav>
+<a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
+<a href="https://github.com/clemsai/email-mcp-server" target="_blank">GitHub</a>
+<a href="#install" class="btn btn-primary">Install</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Email Infrastructure for <span class="gradient">AI Agents</span></h1>
+<p>Give your AI agents their own dedicated email inbox. Send, receive, and manage email autonomously through a single MCP server. Works with Claude, Cursor, and any MCP-compatible agent.</p>
+<div class="hero-btns">
+<a href="#install" class="btn btn-primary">Install MCP Server →</a>
+<a href="https://github.com/clemsai/email-mcp-server" target="_blank" class="btn btn-secondary">View on GitHub</a>
+</div>
+<div class="code-block">
+<span class="comment">// Add to your MCP config</span><br>
+{<br>
+&nbsp;&nbsp;<span class="key">"mcpServers"</span>: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"email"</span>: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"command"</span>: <span class="str">"npx"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"args"</span>: [<span class="str">"-y"</span>, <span class="str">"@clemsai/email-mcp-server"</span>]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</div>
+</div>
+</section>
+
+<section class="features" id="features">
+<div class="container">
+<h2>Everything Agents Need</h2>
+<div class="features-grid">
+<div class="feature-card">
+<div class="icon">📧</div>
+<h3>Send Email</h3>
+<p>Agents can send emails from dedicated inboxes. Full control over recipients, subject, body — both text and HTML.</p>
+</div>
+<div class="feature-card">
+<div class="icon">📥</div>
+<h3>Receive & Read</h3>
+<p>List inboxes, browse messages, and read full email content. Agents can monitor inboxes autonomously.</p>
+</div>
+<div class="feature-card">
+<div class="icon">🔄</div>
+<h3>Reply & Thread</h3>
+<p>Full thread support. Agents can reply to messages and maintain conversation context.</p>
+</div>
+<div class="feature-card">
+<div class="icon">🏢</div>
+<h3>Multi-Inbox</h3>
+<p>Create and manage multiple inboxes. Perfect for agents handling different projects or clients.</p>
+</div>
+<div class="feature-card">
+<div class="icon">⚡</div>
+<h3>Fast & Async</h3>
+<p>Built on AgentMail's high-performance API. Async Python MCP server for non-blocking operations.</p>
+</div>
+<div class="feature-card">
+<div class="icon">🔒</div>
+<h3>Secure</h3>
+<p>API keys stored in environment variables. No hardcoded credentials. Works with secret managers.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="how-it-works">
+<div class="container">
+<h2>How It Works</h2>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Install</h3>
+<p>Add the MCP server to your Claude Desktop, Cursor, or any MCP-compatible agent config.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>Authenticate</h3>
+<p>Set your AgentMail API key. Get a free account at agentmail.to with 3 inboxes and 3K emails/month.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>Agent Uses Email</h3>
+<p>Your agent can now send, receive, and manage email autonomously. No human intervention needed.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="pricing" id="pricing">
+<div class="container">
+<h2>Pricing</h2>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h3>Open Source</h3>
+<div class="price">$0<span>/forever</span></div>
+<ul>
+<li>Full MCP server source code</li>
+<li>Self-hosted on your infrastructure</li>
+<li>Community support via GitHub</li>
+<li>All 4 tools included</li>
+<li>MIT License</li>
+</ul>
+<a href="https://github.com/clemsai/email-mcp-server" target="_blank" class="btn btn-secondary">Get Started</a>
+</div>
+<div class="pricing-card featured">
+<h3>AgentMail API</h3>
+<div class="price">Free<span>/tier</span></div>
+<ul>
+<li>3 free inboxes</li>
+<li>3,000 emails/month</li>
+<li>Pay-as-you-go after free tier</li>
+<li>100+ countries for inbox addresses</li>
+<li>REST API + Python SDK</li>
+</ul>
+<a href="https://agentmail.to" target="_blank" class="btn btn-primary">Get API Key</a>
+</div>
+<div class="pricing-card">
+<h3>Enterprise</h3>
+<div class="price">Custom</div>
+<ul>
+<li>Unlimited inboxes</li>
+<li>Dedicated support</li>
+<li>SLA guarantees</li>
+<li>Custom integrations</li>
+<li>Volume pricing available</li>
+</ul>
+<a href="mailto:Banter2dCentre@gmail.com" class="btn btn-secondary">Contact Sales</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="install">
+<div class="container">
+<h2>Ready to Give Your Agents Email?</h2>
+<p>Install in 30 seconds. Works with any MCP-compatible AI agent.</p>
+<a href="https://github.com/clemsai/email-mcp-server" target="_blank" class="btn btn-primary">Install Now →</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>Built by <a href="https://github.com/clemsai">@clemsai</a> · Powered by <a href="https://agentmail.to">AgentMail</a> · <a href="https://github.com/clemsai/email-mcp-server">Open Source</a></p>
+</div>
+</footer>
+
+</body>
+</html>

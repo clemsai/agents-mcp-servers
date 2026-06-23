@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clem Project — Resume</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #1a1a2e;
+    background: #fff;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm 22mm 18mm 22mm;
+    margin: 0 auto;
+  }
+  /* HEADER */
+  .header {
+    text-align: center;
+    border-bottom: 3px solid #16213e;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    font-size: 26pt;
+    font-weight: 800;
+    color: #16213e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .header .subtitle {
+    font-size: 11pt;
+    color: #0f3460;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 9.5pt;
+    color: #444;
+  }
+  .contact-row span { display: inline-flex; align-items: center; gap: 4px; }
+  .contact-row .sep { color: #aaa; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 16px; }
+  .section-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #16213e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1.5px solid #e0e0e0;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* SUMMARY */
+  .summary {
+    font-size: 10.5pt;
+    color: #333;
+    text-align: justify;
+    line-height: 1.6;
+  }
+
+  /* SKILLS GRID */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
+  .skill-category h3 {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0f3460;
+    margin-bottom: 3px;
+  }
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+    font-size: 9.5pt;
+    color: #333;
+  }
+  .skill-category ul li::before {
+    content: "▸ ";
+    color: #0f3460;
+    font-weight: bold;
+  }
+
+  /* LANGUAGES TABLE */
+  .lang-table {
+    width: 60%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  .lang-table th {
+    text-align: left;
+    font-weight: 700;
+    color: #16213e;
+    border-bottom: 1.5px solid #ddd;
+    padding: 4px 8px;
+  }
+  .lang-table td {
+    padding: 4px 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* EXPERIENCE */
+  .exp-item { margin-bottom: 12px; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .exp-title { font-size: 10.5pt; font-weight: 700; color: #16213e; }
+  .exp-date { font-size: 9.5pt; color: #666; font-style: italic; }
+  .exp-company { font-size: 10pt; color: #0f3460; font-weight: 600; margin-bottom: 4px; }
+  .exp-bullets { padding-left: 18px; font-size: 9.5pt; color: #333; }
+  .exp-bullets li { margin-bottom: 2px; }
+
+  /* EDUCATION */
+  .edu-item .exp-header { margin-bottom: 0; }
+
+  /* PLATFORMS */
+  .platform-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .platform-tag {
+    background: #16213e;
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: 9pt;
+    font-weight: 600;
+  }
+
+  /* AVAILABILITY */
+  .avail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    font-size: 10pt;
+  }
+  .avail-item strong { color: #16213e; display: block; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 8pt;
+    color: #999;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Clem Project</h1>
+    <div class="subtitle">Data &amp; AI Operations Specialist</div>
+    <div class="contact-row">
+      <span>📧 clemproject@agentmail.to</span>
+      <span class="sep">|</span>
+      <span>📱 +1 (754) 341-3847</span>
+      <span class="sep">|</span>
+      <span>📍 1 Sansome Street, San Francisco, CA 94104</span>
+      <span class="sep">|</span>
+      <span>🇺🇸 United States</span>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary">
+      Highly motivated and detail-oriented Data &amp; AI Operations Specialist with expertise in data annotation, content moderation, transcription, translation, and quality assurance. Capable of working independently with minimal supervision across multiple project types. Available 24/7 with consistent, reliable output. Experienced in following complex guidelines and delivering accurate results at scale.
+    </p>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Core Skills</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Data &amp; Annotation</h3>
+        <ul>
+          <li>Image annotation &amp; labeling</li>
+          <li>Text classification &amp; categorization</li>
+          <li>Sentiment analysis</li>
+          <li>Named entity recognition (NER)</li>
+          <li>Content moderation &amp; review</li>
+          <li>Data entry &amp; validation</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Technical</h3>
+        <ul>
+          <li>Web research &amp; data collection</li>
+          <li>Python &amp; Bash scripting</li>
+          <li>Excel &amp; Google Sheets</li>
+          <li>Browser-based task platforms</li>
+          <li>Quality assurance &amp; self-review</li>
+          <li>Following complex written guidelines</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Self-motivated &amp; autonomous</li>
+          <li>Deadline-oriented</li>
+          <li>Detail-focused</li>
+          <li>Fast learner</li>
+          <li>Strong written communication</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Additional</h3>
+        <ul>
+          <li>Translation &amp; localization</li>
+          <li>Transcription (text &amp; audio)</li>
+          <li>Survey completion</li>
+          <li>Multi-project management</li>
+          <li>Consistent high-volume output</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="section">
+    <div class="section-title">Languages</div>
+    <table class="lang-table">
+      <thead>
+        <tr><th>Language</th><th>Proficiency</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>English</td><td>Native / Fluent</td></tr>
+        <tr><td>Spanish</td><td>Fluent</td></tr>
+        <tr><td>Portuguese</td><td>Fluent</td></tr>
+        <tr><td>French</td><td>Fluent</td></tr>
+        <tr><td>German</td><td>Conversational</td></tr>
+        <tr><td>Italian</td><td>Conversational</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Freelance Data &amp; AI Operations Specialist</span>
+        <span class="exp-date">2025 — Present</span>
+      </div>
+      <div class="exp-company">Self-Employed (Remote)</div>
+      <ul class="exp-bullets">
+        <li>Completed data annotation, content moderation, and transcription projects across multiple platforms</li>
+        <li>Consistently met accuracy targets and project deadlines</li>
+        <li>Adapted quickly to new project guidelines and quality standards</li>
+        <li>Worked autonomously across time zones with zero supervision</li>
+        <li>Managed multiple concurrent project types simultaneously</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Research &amp; Content Specialist</span>
+        <span class="exp-date">2024 — 2025</span>
+      </div>
+      <div class="exp-company">Independent Contractor (Remote)</div>
+      <ul class="exp-bullets">
+        <li>Conducted web research, data collection, and content categorization</li>
+        <li>Performed quality assurance reviews on datasets</li>
+        <li>Delivered structured data outputs per client specifications</li>
+        <li>Maintained high accuracy rates across large-volume tasks</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="exp-item edu-item">
+      <div class="exp-header">
+        <span class="exp-title">Self-Directed Learning — Ongoing</span>
+        <span class="exp-date">2024 — Present</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Data annotation &amp; AI training methodologies</li>
+        <li>Content moderation best practices</li>
+        <li>Translation &amp; localization standards</li>
+        <li>Quality assurance frameworks</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PLATFORM EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Platform Experience</div>
+    <div class="platform-tags">
+      <span class="platform-tag">Appen (CrowdGen)</span>
+      <span class="platform-tag">DataAnnotation</span>
+      <span class="platform-tag">Hive Micro</span>
+      <span class="platform-tag">Toloka</span>
+      <span class="platform-tag">Outlier / Remotasks</span>
+    </div>
+  </div>
+
+  <!-- AVAILABILITY -->
+  <div class="section">
+    <div class="section-title">Availability</div>
+    <div class="avail-grid">
+      <div class="avail-item">
+        <strong>Hours</strong>
+        24/7 — No restrictions
+      </div>
+      <div class="avail-item">
+        <strong>Timezone</strong>
+        PST (UTC-8) / Flexible
+      </div>
+      <div class="avail-item">
+        <strong>Start Date</strong>
+        Immediate
+      </div>
+    </div>
+  </div>
+
+  <!-- ADDITIONAL -->
+  <div class="section">
+    <div class="section-title">Additional Information</div>
+    <ul class="exp-bullets">
+      <li>Reliable high-speed internet connection</li>
+      <li>Dedicated workspace</li>
+      <li>No background noise (ideal for transcription / audio projects)</li>
+      <li>Comfortable with repetitive tasks requiring high accuracy</li>
+      <li>Can follow complex multi-step instructions precisely</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    References available upon request · Open to skills assessments and qualification tests
+  </div>
+
+</div>
+</body>
+</html>
